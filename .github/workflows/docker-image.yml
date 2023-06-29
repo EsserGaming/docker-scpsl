@@ -3,10 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches:
-    - master/*
+    - master
+    - ubuntu-22.04
   pull_request:
     branches:
-    - master/*
+    - master
+    - ubuntu-22.04
 
 jobs:
 
