@@ -15,7 +15,6 @@ RUN apt-get install -y ffmpeg
 RUN ffmpeg -version
 RUN apt-get install -y curl
 RUN apt-get install -y wget
-RUN apt-get install -y lib32gcc1
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
