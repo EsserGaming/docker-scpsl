@@ -1,3 +1,3 @@
 # docker-scpsl
 
-Simple dockerfile that has nodejs 15.x and mono-complete.
+Modified docker file that includes aspnet 9.0 & 8.0 and mono.

@@ -20,9 +20,6 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 RUN apt-get update && apt-get install -y aspnetcore-runtime-8.0 aspnetcore-runtime-9.0
-RUN apt-get update
-RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
-RUN apt-get update
 RUN dpkg --add-architecture i386
 RUN apt-get update
 RUN apt-get install -y mono-complete
