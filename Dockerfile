@@ -19,7 +19,7 @@ RUN apt-get install -y lib32gcc1
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
-RUN apt-get update && apt-get install -y aspnetcore-runtime-8.0
+RUN apt-get update && apt-get install -y aspnetcore-runtime-8.0 aspnetcore-runtime-9.0
 RUN apt-get update
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get update
