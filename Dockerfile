@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 RUN echo "Building.."
