@@ -4,13 +4,8 @@ USER root
 # Getting the essentials
 RUN apt-get update
 RUN apt-get install -y software-properties-common curl wget
-RUN add-apt-repository ppa:dotnet/backports
-RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
-# Install ffmpeg + aspnetcore-runtime 8 & 9
-RUN apt-get install -y ffmpeg
-RUN ffmpeg -version
-RUN apt-get install -y aspnetcore-runtime-9.0 aspnetcore-runtime-8.0
+
 # Container setup for Pterodactyl
 RUN adduser --home /home/container container --disabled-password
 RUN usermod -a -G container container
