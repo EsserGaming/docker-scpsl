@@ -1,20 +1,17 @@
 FROM ubuntu:24.04
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
-RUN echo "Building.."
+# Getting the essentials
 RUN apt-get update
-RUN apt-get install -y software-properties-common
-RUN apt-get install -y curl
-RUN apt-get install -y wget
+RUN apt-get install -y software-properties-common curl wget
 RUN add-apt-repository ppa:dotnet/backports
 RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
-
-RUN dpkg --add-architecture i386
+# Install ffmpeg + aspnetcore-runtime 8 & 9
 RUN apt-get install -y ffmpeg
 RUN ffmpeg -version
 RUN apt-get install -y aspnetcore-runtime-9.0 aspnetcore-runtime-8.0
-
+# Container setup for Pterodactyl
 RUN adduser --home /home/container container --disabled-password
 RUN usermod -a -G container container
 RUN chown -R container:container /home/container
