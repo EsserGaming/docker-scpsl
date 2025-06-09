@@ -19,7 +19,7 @@ RUN ffmpeg -version
 RUN apt-get install -y aspnetcore-runtime-9.0 aspnetcore-runtime-8.0
 RUN apt-get install -y mono-complete
 
-RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
+RUN adduser --home /home/container container --disabled-password
 RUN usermod -a -G container container
 RUN chown -R container:container /home/container
 RUN mkdir /mnt/server
