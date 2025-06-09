@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 RUN echo "Building.."
@@ -9,13 +9,12 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" |
 RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
 
-
 RUN apt-get update
 RUN apt-get install -y ffmpeg
 RUN ffmpeg -version
 RUN apt-get install -y curl
 RUN apt-get install -y wget
-RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 RUN apt-get update && apt-get install -y aspnetcore-runtime-8.0 aspnetcore-runtime-9.0
