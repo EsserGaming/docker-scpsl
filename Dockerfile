@@ -2,7 +2,8 @@ FROM ubuntu:24.04
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 RUN echo "Building.."
-RUN apt-get update && apt upgrade -y
+RUN apt-get update
+RUN apt-get install -y software-properties-common
 RUN apt-get install -y curl
 RUN apt-get install -y wget
 RUN apt install -y gnupg ca-certificates
