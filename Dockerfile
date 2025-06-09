@@ -1,10 +1,10 @@
-FROM ubuntu:24.04
+FROM debian
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/runtime:9.0 AS build
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 # Getting the essentials
 RUN apt-get update
 RUN apt-get install -y software-properties-common curl wget
-ENV DEBIAN_FRONTEND=noninteractive
 
 # Container setup for Pterodactyl
 RUN adduser --home /home/container container --disabled-password
