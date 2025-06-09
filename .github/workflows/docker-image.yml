@@ -1,28 +1,21 @@
-name: Build and Push Container Image
-
+name: Log in to ghcr.io
 on:
   push:
     branches:
-      - test
+    - test
+env:
+  REGISTRY_USER: ${{ github.actor }}
+  REGISTRY_PASSWORD: ${{ github.token }}
+  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
-  build-push:
+  login:
+    name: Log in to GitHub Container Registry
     runs-on: self-hosted
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Use Podman Build and Push Action
-        uses: Frozen-Tapestry/container-action@v1
+      - name: Log in to ghcr.io
+        uses: redhat-actions/podman-login@v1
         with:
-          login_registry: ghcr.io
-          login_username: ${{ secrets.REGISTRY_USERNAME }}
-          login_password: ${{ secrets.REGISTRY_PASSWORD }}
-          tags: ghcr.io/EsserGaming/docker-scpsl:latest
-          dockerfile: Dockerfile
-          # Use those security flags if using GitHub Action. Keep the defaults, if using Gitea.
-          security: |
-            --security-opt=seccomp=unconfined
-            --security-opt=apparmor=unconfined
-          push: true
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          registry: ${{ env.IMAGE_REGISTRY }}
