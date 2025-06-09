@@ -18,4 +18,4 @@ jobs:
         with:
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
-          registry: essergaming/docker-scpsl:test
+          registry: essergaming/docker-scpsl
