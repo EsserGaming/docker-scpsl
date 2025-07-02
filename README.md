@@ -1,3 +1,8 @@
 # docker-scpsl
 
-Modified docker file that includes aspnet 9.0 & 8.0 and mono.
+A modified docker file that includes [ffmpeg](https://ffmpeg.org/).
+
+## GitHub package branches:
+- master: `ghcr.io/essergaming/docker-scpsl` **(Includes ffmpeg)**
+- slim `ghcr.io/essergaming/docker-scpsl:slim` **(Does not include ffmpeg, smaller size)**
+- staging `ghcr.io/essergaming/docker-scpsl:staging` **(Staging branch, experimental)**

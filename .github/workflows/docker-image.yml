@@ -1,25 +1,18 @@
-name: Build and publish a Docker image to ghcr.io
-on:
+name: Docker Image CI
 
-  # publish on pushes to the main branch (image tagged as "latest")
+on:
   push:
-    branches:
-      - master
-      - slim
-      - ubuntu-24.04
-      - test
-  workflow_dispatch:
+    branches: [ "24.04" ]
+  pull_request:
+    branches: [ "24.04" ]
 
 jobs:
-  docker_publish:
-    runs-on: "ubuntu-24.04"
+
+  build:
+
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      # https://github.com/marketplace/actions/push-to-ghcr
-      - name: Build and publish a Docker image for ${{ github.repository }}
-        uses: macbre/push-to-ghcr@master
-        with:
-          image_name: ${{ github.repository }}  # it will be lowercased internally
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
