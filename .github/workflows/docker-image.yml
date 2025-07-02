@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - master
+      - slim
+      - ubuntu-24.04
       - test
   workflow_dispatch:
 
