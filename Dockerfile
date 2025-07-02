@@ -3,7 +3,7 @@ LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 
 # Getting the essentials
-RUN apt-get update
+RUN apt-get update && apt upgrade -y
 
 # Container setup for Pterodactyl
 RUN adduser --home /home/container container --disabled-password
