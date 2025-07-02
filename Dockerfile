@@ -1,10 +1,8 @@
-FROM debian
+FROM ubuntu
 LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 
 # Getting the essentials
-RUN apt-get update
-RUN apt-get install -y software-properties-common curl wget
 RUN apt-get install -y ffmpeg
 
 # Container setup for Pterodactyl
