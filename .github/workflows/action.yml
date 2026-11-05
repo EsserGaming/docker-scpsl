@@ -5,7 +5,7 @@ on:
     branches: 
       - master
       - slim
-      - staging
+      - heavy
     paths:
       - 'Dockerfile'
       - 'entrypoint.sh'

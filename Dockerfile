@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     adduser \
     libicu76 \
+    mono-complete \
     ffmpeg && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
