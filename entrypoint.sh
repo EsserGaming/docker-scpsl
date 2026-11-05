@@ -19,8 +19,10 @@ if [ -z "${AUTO_UPDATE}" ] || [ "${AUTO_UPDATE}" == "1" ]; then
         ./DepotDownloader -app 996560 -qr -depot 996562 -branch "${BRANCH_TAG}" -dir /home/container -validate
     fi
     echo "SCP:SL update finished."
+    sleep 1
 else
     echo "Skipping auto updater..."
+    sleep 1
 fi
 
 cd /home/container || exit 1
