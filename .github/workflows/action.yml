@@ -4,8 +4,8 @@ on:
   push:
     branches: 
       - master
+      - heavy
       - slim
-      - staging
     paths:
       - 'Dockerfile'
       - 'entrypoint.sh'
