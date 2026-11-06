@@ -16,7 +16,7 @@ if [ -z "${AUTO_UPDATE}" ] || [ "${AUTO_UPDATE}" == "1" ]; then
         ./DepotDownloader -app 996560 -depot 996562 -dir /home/container -validate > /dev/null 2>&1
     else
         echo "Using branch: ${BRANCH_TAG}"
-        ./DepotDownloader -app 996560 -qr -depot 996562 -branch "${BRANCH_TAG}" -dir /home/container -validate
+        ./DepotDownloader -app 996560 -qr -remember-password -depot 996562 -branch "${BRANCH_TAG}" -dir /home/container -validate
     fi
     echo "SCP:SL update finished."
     sleep 1
