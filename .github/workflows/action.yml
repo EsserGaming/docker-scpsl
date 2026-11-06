@@ -3,9 +3,9 @@ name: Build and Publish Docker Image
 on:
   push:
     branches: 
-      - heavy
-      - slim
       - master
+      - heavy
+      - staging
     paths:
       - 'Dockerfile'
       - 'entrypoint.sh'
